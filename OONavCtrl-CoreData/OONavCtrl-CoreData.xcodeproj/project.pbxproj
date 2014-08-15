@@ -27,13 +27,17 @@
 		14A86ECA199E85DF00479912 /* OONCProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86EC3199E85DF00479912 /* OONCProduct.m */; };
 		14A86ECB199E85DF00479912 /* OONCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86EC5199E85DF00479912 /* OONCWebViewController.m */; };
 		14A86ED0199E865C00479912 /* OONCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86ECD199E865C00479912 /* OONCAppDelegate.m */; };
-		14A86ED1199E865C00479912 /* OONCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86ECF199E865C00479912 /* OONCViewController.m */; };
 		14A86ED7199E872F00479912 /* microsoft-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A86ED2199E872F00479912 /* microsoft-logo.png */; };
 		14A86ED8199E872F00479912 /* samsung-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A86ED3199E872F00479912 /* samsung-logo.png */; };
 		14A86ED9199E872F00479912 /* nokia-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14A86ED4199E872F00479912 /* nokia-logo.jpg */; };
 		14A86EDA199E872F00479912 /* apple-logo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 14A86ED5199E872F00479912 /* apple-logo.jpeg */; };
 		14A86EDB199E872F00479912 /* Blackberry-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14A86ED6199E872F00479912 /* Blackberry-logo.jpg */; };
 		14A86EDD199E883000479912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A86EDC199E883000479912 /* Main.storyboard */; };
+		14A86EE0199E89C800479912 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14A86EDE199E89C800479912 /* Model.xcdatamodeld */; };
+		14A86EE3199E8F1C00479912 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86EE2199E8F1C00479912 /* Company.m */; };
+		14A86EE6199E8F1C00479912 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86EE5199E8F1C00479912 /* Product.m */; };
+		14A86EE9199E901500479912 /* Product+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86EE8199E901500479912 /* Product+Create.m */; };
+		14A86EEC199E902C00479912 /* Company+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86EEB199E902C00479912 /* Company+Create.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,14 +83,21 @@
 		14A86EC5199E85DF00479912 /* OONCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OONCWebViewController.m; sourceTree = "<group>"; };
 		14A86ECC199E865C00479912 /* OONCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OONCAppDelegate.h; path = ../OONCAppDelegate.h; sourceTree = "<group>"; };
 		14A86ECD199E865C00479912 /* OONCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OONCAppDelegate.m; path = ../OONCAppDelegate.m; sourceTree = "<group>"; };
-		14A86ECE199E865C00479912 /* OONCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OONCViewController.h; path = ../OONCViewController.h; sourceTree = "<group>"; };
-		14A86ECF199E865C00479912 /* OONCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OONCViewController.m; path = ../OONCViewController.m; sourceTree = "<group>"; };
 		14A86ED2199E872F00479912 /* microsoft-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "microsoft-logo.png"; sourceTree = "<group>"; };
 		14A86ED3199E872F00479912 /* samsung-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "samsung-logo.png"; sourceTree = "<group>"; };
 		14A86ED4199E872F00479912 /* nokia-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nokia-logo.jpg"; sourceTree = "<group>"; };
 		14A86ED5199E872F00479912 /* apple-logo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "apple-logo.jpeg"; sourceTree = "<group>"; };
 		14A86ED6199E872F00479912 /* Blackberry-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Blackberry-logo.jpg"; sourceTree = "<group>"; };
 		14A86EDC199E883000479912 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		14A86EDF199E89C800479912 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		14A86EE1199E8F1C00479912 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
+		14A86EE2199E8F1C00479912 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
+		14A86EE4199E8F1C00479912 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		14A86EE5199E8F1C00479912 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		14A86EE7199E901500479912 /* Product+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Product+Create.h"; sourceTree = "<group>"; };
+		14A86EE8199E901500479912 /* Product+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Product+Create.m"; sourceTree = "<group>"; };
+		14A86EEA199E902C00479912 /* Company+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Company+Create.h"; sourceTree = "<group>"; };
+		14A86EEB199E902C00479912 /* Company+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Company+Create.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +127,15 @@
 		14A86E79199E85B100479912 = {
 			isa = PBXGroup;
 			children = (
+				14A86EEA199E902C00479912 /* Company+Create.h */,
+				14A86EEB199E902C00479912 /* Company+Create.m */,
+				14A86EE7199E901500479912 /* Product+Create.h */,
+				14A86EE8199E901500479912 /* Product+Create.m */,
+				14A86EDE199E89C800479912 /* Model.xcdatamodeld */,
+				14A86EE4199E8F1C00479912 /* Product.h */,
+				14A86EE5199E8F1C00479912 /* Product.m */,
+				14A86EE1199E8F1C00479912 /* Company.h */,
+				14A86EE2199E8F1C00479912 /* Company.m */,
 				14A86EBE199E85DF00479912 /* OONChildViewController.h */,
 				14A86EBF199E85DF00479912 /* OONChildViewController.m */,
 				14A86EC0199E85DF00479912 /* OONCParentViewController.h */,
@@ -179,8 +199,6 @@
 				14A86EBD199E85DF00479912 /* OONCDAO.m */,
 				14A86ECC199E865C00479912 /* OONCAppDelegate.h */,
 				14A86ECD199E865C00479912 /* OONCAppDelegate.m */,
-				14A86ECE199E865C00479912 /* OONCViewController.h */,
-				14A86ECF199E865C00479912 /* OONCViewController.m */,
 				14A86E8D199E85B100479912 /* OONavCtrl-CoreData-Info.plist */,
 				14A86E8E199E85B100479912 /* InfoPlist.strings */,
 				14A86E91199E85B100479912 /* main.m */,
@@ -311,15 +329,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				14A86ECA199E85DF00479912 /* OONCProduct.m in Sources */,
+				14A86EE6199E8F1C00479912 /* Product.m in Sources */,
 				14A86ECB199E85DF00479912 /* OONCWebViewController.m in Sources */,
 				14A86E96199E85B100479912 /* NCCDAppDelegate.m in Sources */,
 				14A86EC9199E85DF00479912 /* OONCParentViewController.m in Sources */,
+				14A86EE9199E901500479912 /* Product+Create.m in Sources */,
 				14A86E92199E85B100479912 /* main.m in Sources */,
 				14A86EC6199E85DF00479912 /* OONCCompany.m in Sources */,
-				14A86ED1199E865C00479912 /* OONCViewController.m in Sources */,
 				14A86EC7199E85DF00479912 /* OONCDAO.m in Sources */,
+				14A86EE3199E8F1C00479912 /* Company.m in Sources */,
 				14A86ED0199E865C00479912 /* OONCAppDelegate.m in Sources */,
 				14A86EC8199E85DF00479912 /* OONChildViewController.m in Sources */,
+				14A86EEC199E902C00479912 /* Company+Create.m in Sources */,
+				14A86EE0199E89C800479912 /* Model.xcdatamodeld in Sources */,
 				14A86E9C199E85B100479912 /* NCCDViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +549,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		14A86EDE199E89C800479912 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				14A86EDF199E89C800479912 /* Model.xcdatamodel */,
+			);
+			currentVersion = 14A86EDF199E89C800479912 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 14A86E7A199E85B100479912 /* Project object */;
 }
