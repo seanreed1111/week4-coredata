@@ -10,4 +10,7 @@
 
 @interface Company (Create)
 
++ (Company *)companyWithDictionary:(NSDictionary *)dictionary
+            inManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end

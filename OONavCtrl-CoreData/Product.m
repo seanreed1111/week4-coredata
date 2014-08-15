@@ -12,7 +12,7 @@
 
 @implementation Product
 
-@dynamic name;
+@dynamic productname;
 @dynamic companyname;
 
 @end

@@ -38,6 +38,10 @@
 		14A86EE6199E8F1C00479912 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86EE5199E8F1C00479912 /* Product.m */; };
 		14A86EE9199E901500479912 /* Product+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86EE8199E901500479912 /* Product+Create.m */; };
 		14A86EEC199E902C00479912 /* Company+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86EEB199E902C00479912 /* Company+Create.m */; };
+		14A86EEF199E914D00479912 /* NCCDParentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86EEE199E914D00479912 /* NCCDParentViewController.m */; };
+		14A86EF2199E918700479912 /* NCCDChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86EF1199E918700479912 /* NCCDChildViewController.m */; };
+		14A86EF5199E91B800479912 /* NCCDWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86EF4199E91B800479912 /* NCCDWebViewController.m */; };
+		14A86EF8199EA61800479912 /* NCCDDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86EF7199EA61800479912 /* NCCDDAO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,14 +77,14 @@
 		14A86EBB199E85DF00479912 /* OONCCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OONCCompany.m; path = ../OONCCompany.m; sourceTree = "<group>"; };
 		14A86EBC199E85DF00479912 /* OONCDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OONCDAO.h; path = ../OONCDAO.h; sourceTree = "<group>"; };
 		14A86EBD199E85DF00479912 /* OONCDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OONCDAO.m; path = ../OONCDAO.m; sourceTree = "<group>"; };
-		14A86EBE199E85DF00479912 /* OONChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OONChildViewController.h; sourceTree = "<group>"; };
-		14A86EBF199E85DF00479912 /* OONChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OONChildViewController.m; sourceTree = "<group>"; };
-		14A86EC0199E85DF00479912 /* OONCParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OONCParentViewController.h; sourceTree = "<group>"; };
-		14A86EC1199E85DF00479912 /* OONCParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OONCParentViewController.m; sourceTree = "<group>"; };
+		14A86EBE199E85DF00479912 /* OONChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OONChildViewController.h; path = ../OONChildViewController.h; sourceTree = "<group>"; };
+		14A86EBF199E85DF00479912 /* OONChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OONChildViewController.m; path = ../OONChildViewController.m; sourceTree = "<group>"; };
+		14A86EC0199E85DF00479912 /* OONCParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OONCParentViewController.h; path = ../OONCParentViewController.h; sourceTree = "<group>"; };
+		14A86EC1199E85DF00479912 /* OONCParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OONCParentViewController.m; path = ../OONCParentViewController.m; sourceTree = "<group>"; };
 		14A86EC2199E85DF00479912 /* OONCProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OONCProduct.h; path = ../OONCProduct.h; sourceTree = "<group>"; };
 		14A86EC3199E85DF00479912 /* OONCProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OONCProduct.m; path = ../OONCProduct.m; sourceTree = "<group>"; };
-		14A86EC4199E85DF00479912 /* OONCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OONCWebViewController.h; sourceTree = "<group>"; };
-		14A86EC5199E85DF00479912 /* OONCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OONCWebViewController.m; sourceTree = "<group>"; };
+		14A86EC4199E85DF00479912 /* OONCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OONCWebViewController.h; path = ../OONCWebViewController.h; sourceTree = "<group>"; };
+		14A86EC5199E85DF00479912 /* OONCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OONCWebViewController.m; path = ../OONCWebViewController.m; sourceTree = "<group>"; };
 		14A86ECC199E865C00479912 /* OONCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OONCAppDelegate.h; path = ../OONCAppDelegate.h; sourceTree = "<group>"; };
 		14A86ECD199E865C00479912 /* OONCAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OONCAppDelegate.m; path = ../OONCAppDelegate.m; sourceTree = "<group>"; };
 		14A86ED2199E872F00479912 /* microsoft-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "microsoft-logo.png"; sourceTree = "<group>"; };
@@ -98,6 +102,14 @@
 		14A86EE8199E901500479912 /* Product+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Product+Create.m"; sourceTree = "<group>"; };
 		14A86EEA199E902C00479912 /* Company+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Company+Create.h"; sourceTree = "<group>"; };
 		14A86EEB199E902C00479912 /* Company+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Company+Create.m"; sourceTree = "<group>"; };
+		14A86EED199E914D00479912 /* NCCDParentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCCDParentViewController.h; sourceTree = "<group>"; };
+		14A86EEE199E914D00479912 /* NCCDParentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCCDParentViewController.m; sourceTree = "<group>"; };
+		14A86EF0199E918700479912 /* NCCDChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCCDChildViewController.h; sourceTree = "<group>"; };
+		14A86EF1199E918700479912 /* NCCDChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCCDChildViewController.m; sourceTree = "<group>"; };
+		14A86EF3199E91B800479912 /* NCCDWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCCDWebViewController.h; sourceTree = "<group>"; };
+		14A86EF4199E91B800479912 /* NCCDWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCCDWebViewController.m; sourceTree = "<group>"; };
+		14A86EF6199EA61800479912 /* NCCDDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NCCDDAO.h; sourceTree = "<group>"; };
+		14A86EF7199EA61800479912 /* NCCDDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NCCDDAO.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,12 +148,14 @@
 				14A86EE5199E8F1C00479912 /* Product.m */,
 				14A86EE1199E8F1C00479912 /* Company.h */,
 				14A86EE2199E8F1C00479912 /* Company.m */,
-				14A86EBE199E85DF00479912 /* OONChildViewController.h */,
-				14A86EBF199E85DF00479912 /* OONChildViewController.m */,
-				14A86EC0199E85DF00479912 /* OONCParentViewController.h */,
-				14A86EC1199E85DF00479912 /* OONCParentViewController.m */,
-				14A86EC4199E85DF00479912 /* OONCWebViewController.h */,
-				14A86EC5199E85DF00479912 /* OONCWebViewController.m */,
+				14A86EF6199EA61800479912 /* NCCDDAO.h */,
+				14A86EF7199EA61800479912 /* NCCDDAO.m */,
+				14A86EF3199E91B800479912 /* NCCDWebViewController.h */,
+				14A86EF4199E91B800479912 /* NCCDWebViewController.m */,
+				14A86EF0199E918700479912 /* NCCDChildViewController.h */,
+				14A86EF1199E918700479912 /* NCCDChildViewController.m */,
+				14A86EED199E914D00479912 /* NCCDParentViewController.h */,
+				14A86EEE199E914D00479912 /* NCCDParentViewController.m */,
 				14A86E8B199E85B100479912 /* OONavCtrl-CoreData */,
 				14A86EAA199E85B100479912 /* OONavCtrl-CoreDataTests */,
 				14A86E84199E85B100479912 /* Frameworks */,
@@ -186,6 +200,12 @@
 		14A86E8C199E85B100479912 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				14A86EC0199E85DF00479912 /* OONCParentViewController.h */,
+				14A86EC1199E85DF00479912 /* OONCParentViewController.m */,
+				14A86EC4199E85DF00479912 /* OONCWebViewController.h */,
+				14A86EC5199E85DF00479912 /* OONCWebViewController.m */,
+				14A86EBE199E85DF00479912 /* OONChildViewController.h */,
+				14A86EBF199E85DF00479912 /* OONChildViewController.m */,
 				14A86ED2199E872F00479912 /* microsoft-logo.png */,
 				14A86ED3199E872F00479912 /* samsung-logo.png */,
 				14A86ED4199E872F00479912 /* nokia-logo.jpg */,
@@ -329,11 +349,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				14A86ECA199E85DF00479912 /* OONCProduct.m in Sources */,
+				14A86EF5199E91B800479912 /* NCCDWebViewController.m in Sources */,
+				14A86EF2199E918700479912 /* NCCDChildViewController.m in Sources */,
 				14A86EE6199E8F1C00479912 /* Product.m in Sources */,
 				14A86ECB199E85DF00479912 /* OONCWebViewController.m in Sources */,
 				14A86E96199E85B100479912 /* NCCDAppDelegate.m in Sources */,
+				14A86EF8199EA61800479912 /* NCCDDAO.m in Sources */,
 				14A86EC9199E85DF00479912 /* OONCParentViewController.m in Sources */,
 				14A86EE9199E901500479912 /* Product+Create.m in Sources */,
+				14A86EEF199E914D00479912 /* NCCDParentViewController.m in Sources */,
 				14A86E92199E85B100479912 /* main.m in Sources */,
 				14A86EC6199E85DF00479912 /* OONCCompany.m in Sources */,
 				14A86EC7199E85DF00479912 /* OONCDAO.m in Sources */,

@@ -10,4 +10,7 @@
 
 @interface Product (Create)
 
++ (Product *)productWithName:(NSString *)name
+    inManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end
