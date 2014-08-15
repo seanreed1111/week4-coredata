@@ -13,7 +13,6 @@
 		14A86E90199E85B100479912 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14A86E8E199E85B100479912 /* InfoPlist.strings */; };
 		14A86E92199E85B100479912 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86E91199E85B100479912 /* main.m */; };
 		14A86E96199E85B100479912 /* NCCDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86E95199E85B100479912 /* NCCDAppDelegate.m */; };
-		14A86E99199E85B100479912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A86E97199E85B100479912 /* Main.storyboard */; };
 		14A86E9C199E85B100479912 /* NCCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A86E9B199E85B100479912 /* NCCDViewController.m */; };
 		14A86E9E199E85B100479912 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14A86E9D199E85B100479912 /* Images.xcassets */; };
 		14A86EA5199E85B100479912 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A86EA4199E85B100479912 /* XCTest.framework */; };
@@ -34,6 +33,7 @@
 		14A86ED9199E872F00479912 /* nokia-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14A86ED4199E872F00479912 /* nokia-logo.jpg */; };
 		14A86EDA199E872F00479912 /* apple-logo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 14A86ED5199E872F00479912 /* apple-logo.jpeg */; };
 		14A86EDB199E872F00479912 /* Blackberry-logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14A86ED6199E872F00479912 /* Blackberry-logo.jpg */; };
+		14A86EDD199E883000479912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A86EDC199E883000479912 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,6 @@
 		14A86E93199E85B100479912 /* OONavCtrl-CoreData-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OONavCtrl-CoreData-Prefix.pch"; sourceTree = "<group>"; };
 		14A86E94199E85B100479912 /* NCCDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NCCDAppDelegate.h; sourceTree = "<group>"; };
 		14A86E95199E85B100479912 /* NCCDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NCCDAppDelegate.m; sourceTree = "<group>"; };
-		14A86E98199E85B100479912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14A86E9A199E85B100479912 /* NCCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NCCDViewController.h; sourceTree = "<group>"; };
 		14A86E9B199E85B100479912 /* NCCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NCCDViewController.m; sourceTree = "<group>"; };
 		14A86E9D199E85B100479912 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -87,6 +86,7 @@
 		14A86ED4199E872F00479912 /* nokia-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nokia-logo.jpg"; sourceTree = "<group>"; };
 		14A86ED5199E872F00479912 /* apple-logo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "apple-logo.jpeg"; sourceTree = "<group>"; };
 		14A86ED6199E872F00479912 /* Blackberry-logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Blackberry-logo.jpg"; sourceTree = "<group>"; };
+		14A86EDC199E883000479912 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +154,7 @@
 			children = (
 				14A86E94199E85B100479912 /* NCCDAppDelegate.h */,
 				14A86E95199E85B100479912 /* NCCDAppDelegate.m */,
-				14A86E97199E85B100479912 /* Main.storyboard */,
+				14A86EDC199E883000479912 /* Main.storyboard */,
 				14A86E9A199E85B100479912 /* NCCDViewController.h */,
 				14A86E9B199E85B100479912 /* NCCDViewController.m */,
 				14A86E9D199E85B100479912 /* Images.xcassets */,
@@ -290,7 +290,7 @@
 				14A86E90199E85B100479912 /* InfoPlist.strings in Resources */,
 				14A86ED8199E872F00479912 /* samsung-logo.png in Resources */,
 				14A86EDA199E872F00479912 /* apple-logo.jpeg in Resources */,
-				14A86E99199E85B100479912 /* Main.storyboard in Resources */,
+				14A86EDD199E883000479912 /* Main.storyboard in Resources */,
 				14A86ED9199E872F00479912 /* nokia-logo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,14 +349,6 @@
 				14A86E8F199E85B100479912 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		14A86E97199E85B100479912 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				14A86E98199E85B100479912 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		14A86EAD199E85B100479912 /* InfoPlist.strings */ = {
