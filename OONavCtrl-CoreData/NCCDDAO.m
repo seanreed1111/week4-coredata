@@ -36,23 +36,56 @@
                 if (!success) {
                     NSLog(@"couldn't create document at %@", url);
                 } else {
-                    [NCCDDAO documentIsReady:document];
+                  // no need to try to fetch data because file didn't exist!!!!
+
                 }
             }];
         }
     });
     
-    return document;
+    return document; // not threadsafe
+    
+    //since the openWithCompletionHandler: and saveToURL:forSaveOperation: methods do not happen on the
+    //main queue, there is no guarantee that I'll be able to return a document here.
 }
 
 + (void)documentIsReady:(UIManagedDocument *)document
-{
+{   //loads data from Core Data persistent store into current context
     NSLog(@"NCCDAO documentIsReady:document = %@",document);
     
-    // do stuff with the document here.
+
     //This method is guaranteed to be on the same main thread since
-    // message is sent ONLY within the completion handler for Open or Create
+    // message is sent ONLY within the completion handler for openWithCompletionHandler:
     //under the sharedDocument Dispatch once
+    
+    if (document.documentState == UIDocumentStateNormal)
+    {
+
+        NSManagedObjectContext *context = document.managedObjectContext;
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Company"];
+        request.fetchBatchSize = 20;
+        request.fetchLimit = 100;
+        request.predicate = nil;
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"companyname"
+                                                                  ascending:YES
+                                                                   selector:@selector(localizedStandardCompare:)]];
+        NSError *error;
+        NSArray *companies = [context executeFetchRequest:request error:&error]; //not threadsafe, but "USUALLY" very fast
+        
+    }
+    
+}
+
++ (NSMutableArray *)sharedCompanyObjects
+{
+    static NSMutableArray *companies = nil;
+    
+    return companies;
+    
+}
+
+- (NSMutableArray)initCompanyObject
+{
     
 }
 
