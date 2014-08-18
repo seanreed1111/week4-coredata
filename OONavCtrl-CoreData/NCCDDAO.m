@@ -9,8 +9,56 @@
 #import "NCCDDAO.h"
 
 @implementation NCCDDAO
++ (UIManagedDocument *)sharedDocument
+{
+    static UIManagedDocument *document = nil;
+    static dispatch_once_t dispatch_once_token;
+    
+    dispatch_once(&dispatch_once_token, ^{
+        // initialize UIManaged Document instance
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSURL *documentsDirectory = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
+        NSString *documentName = @"NCCDAO";
+        NSURL *url = [documentsDirectory URLByAppendingPathComponent:documentName];
+        document = [[UIManagedDocument alloc]initWithFileURL:url];
+
+        BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:[url path]];
+        if (fileExists) {
+            [document openWithCompletionHandler:^(BOOL success){
+                if (!success) {
+                    NSLog(@"couldn't open document at %@", url);
+                } else {
+                    [NCCDDAO documentIsReady:document];
+                }
+            }];
+        } else {
+            [document saveToURL:url forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success){
+                if (!success) {
+                    NSLog(@"couldn't create document at %@", url);
+                } else {
+                    [NCCDDAO documentIsReady:document];
+                }
+            }];
+        }
+    });
+    
+    return document;
+}
+
++ (void)documentIsReady:(UIManagedDocument *)document
+{
+    NSLog(@"NCCDAO documentIsReady:document = %@",document);
+    
+    // do stuff with the document here.
+    //This method is guaranteed to be on the same main thread since
+    // message is sent ONLY within the completion handler for Open or Create
+    //under the sharedDocument Dispatch once
+    
+}
+
 + (NSMutableArray *)sharedCompanies
 {
+ //probably need to make a sharedDocument method
     static NSMutableArray *companies = nil; // NSMutableArray of OONCCompany objects
     
     static dispatch_once_t dispatch_once_token;
@@ -30,6 +78,17 @@
 //        }
 //        
 //    });
+    
+    dispatch_once(&dispatch_once_token, ^{
+    // initialize UIManaged Document instance
+        
+    // if they exist, add them to companies.
+        
+    // else companies  = [NCCDAO loadCompanies]
+    
+    
+    });
+    
     
     return companies;
 }
@@ -68,11 +127,12 @@
     NSUInteger companyIndex = [[NCCDDAO sharedCompanies] indexOfObjectIdenticalTo:company];
     NSMutableArray *products = [[NCCDDAO sharedCompanies][companyIndex] products];
     
-    //       [[[OONCDAO sharedCompanies][companyIndex] products] removeObjectAtIndex:productIndex];
+    [[[NCCDDAO sharedCompanies][companyIndex] products] removeObjectAtIndex:productIndex];
     [products removeObjectAtIndex:productIndex];
     
     NSLog(@"OONCDAO deleteProductAtIndex:(NSUInteger)productIndex fromCompany:(OONCCompany *)company");
 }
+
 
 //////////////////////////////////////////
 // DETERMINE IF NSCODER PROTOCOL IS NEEDED
