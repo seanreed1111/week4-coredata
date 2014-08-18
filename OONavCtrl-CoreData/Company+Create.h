@@ -12,5 +12,6 @@
 
 + (Company *)companyWithDictionary:(NSDictionary *)dictionary
             inManagedObjectContext:(NSManagedObjectContext *)context;
++ (Company *)createCompanyWithManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

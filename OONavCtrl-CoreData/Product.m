@@ -2,7 +2,7 @@
 //  Product.m
 //  OONavCtrl-CoreData
 //
-//  Created by Sean Reed on 8/15/14.
+//  Created by Sean Reed on 8/18/14.
 //  Copyright (c) 2014 seanreed.test. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 
 @implementation Product
 
-@dynamic productname;
-@dynamic companyname;
+@dynamic name;
+@dynamic company;
 
 @end

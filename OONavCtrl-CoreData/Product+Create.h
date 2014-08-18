@@ -12,5 +12,6 @@
 
 + (Product *)productWithName:(NSString *)name
     inManagedObjectContext:(NSManagedObjectContext *)context;
++ (Product *)createProductWithManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

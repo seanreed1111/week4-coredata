@@ -2,7 +2,7 @@
 //  Product.h
 //  OONavCtrl-CoreData
 //
-//  Created by Sean Reed on 8/15/14.
+//  Created by Sean Reed on 8/18/14.
 //  Copyright (c) 2014 seanreed.test. All rights reserved.
 //
 
@@ -13,7 +13,7 @@
 
 @interface Product : NSManagedObject
 
-@property (nonatomic, retain) NSString * productname;
-@property (nonatomic, retain) Company *companyname;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) Company *company;
 
 @end

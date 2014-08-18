@@ -35,17 +35,22 @@
     { // create a brand new company in the database
         company = [NSEntityDescription insertNewObjectForEntityForName:@"Company" inManagedObjectContext:context];
         company.companyname = [companyDictionary valueForKey:@"companyname"];
-        company.companyname = [companyDictionary valueForKey:@"companyname"];
-        company.companyname = [companyDictionary valueForKey:@"companyname"];
-        company.companyname = [companyDictionary valueForKey:@"companyname"];
-        company.companyname = [companyDictionary valueForKey:@"companyname"];
+        company.companyurl = [companyDictionary valueForKey:@"companyurl"];
+        company.companyimagename = [companyDictionary valueForKey:@"companyimagename"];
+        company.companyimagepath = [companyDictionary valueForKey:@"companyimagepath"];
+        company.price = [companyDictionary valueForKey:@"price"];
 //      TTD
-//      Must now create one Product for each member of company.products
+//      Must now create one Product for each member of company.products in the dictionary
 //        company.products = [companyDictionary valueForKey:@"products"];
 //      need to insert into the Company model the full NSSet of products in a relationship with this company one at a time
         
     }
     
     return company;
+}
+
++ (Company *)createCompanyWithManagedObjectContext:(NSManagedObjectContext *)context;
+{
+    return ([NSEntityDescription insertNewObjectForEntityForName:@"Company" inManagedObjectContext:context]);
 }
 @end
