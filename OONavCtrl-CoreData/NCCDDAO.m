@@ -72,29 +72,6 @@ static NSMutableArray *companies = nil;
     
 }
 
-//+ (void)executeFetchRequest:(NSFetchRequest *)request forContext:(NSManagedObjectContext *)context error:(NSError *)error completionHandler:^()
-//{
-//    
-//}
-
-
-+ (NSMutableArray *)sharedCompanies
-{
- //the first time this method is called
-      //it must run from a completion handler so that it has an "ready" UIManagedDocument
-//    then, companies are initially loaded once from the Core Data persistent store
-    
-
- // NSMutableArray of OONCCompany objects
-    
-    
-    return companies;
-}
-
-+ (void)resetCompanies;
-{
-    //implement this method
-}
 
 + (NSMutableArray *)loadCompanies
 {
@@ -106,59 +83,8 @@ static NSMutableArray *companies = nil;
     NSDictionary *samsungDictionary = @{@"companyname":@"Samsung",@"companyurl":@"http://samsung.com/us", @"companyimagename":@"samsung-logo.png",@"ticker":@"005930.KS",@"products":[NSMutableArray arrayWithArray:@[@"Samsung Product #1", @"Samsung Product #2", @"Samsung Product #3"]]};
     NSDictionary *blackberryDictionary = @{@"companyname":@"Blackberry",@"companyurl":@"http://microsoft.com", @"companyimagename":@"Blackberry-logo.jpg",@"ticker":@"BBRY",@"products":[NSMutableArray arrayWithArray:@[@"Blackberry Product #1", @"Blackberry Product #2", @"Blackberry Product #3"]]};
     
-    [companies addObject:[OONCCompany createCompanyWithDictionary:microsoftDictionary]];
-    [companies addObject:[OONCCompany createCompanyWithDictionary:appleDictionary]];
-    [companies addObject:[OONCCompany createCompanyWithDictionary:nokiaDictionary]];
-    [companies addObject:[OONCCompany createCompanyWithDictionary:samsungDictionary]];
-    [companies addObject:[OONCCompany createCompanyWithDictionary:blackberryDictionary]];
     
-    for(OONCCompany *company in companies)
-    {
-        company.products = (NSMutableArray *)[company products];
-    }
+    
     return companies;
 }
-
-
-+ (void)deleteProductAtIndex:(NSUInteger)productIndex fromCompany:(OONCCompany *)company
-{
-    NSUInteger companyIndex = [[NCCDDAO sharedCompanies] indexOfObjectIdenticalTo:company];
-    NSMutableArray *products = [[NCCDDAO sharedCompanies][companyIndex] products];
-    
-    [[[NCCDDAO sharedCompanies][companyIndex] products] removeObjectAtIndex:productIndex];
-    [products removeObjectAtIndex:productIndex];
-    
-    NSLog(@"OONCDAO deleteProductAtIndex:(NSUInteger)productIndex fromCompany:(OONCCompany *)company");
-}
-
-
-//////////////////////////////////////////
-// DETERMINE IF NSCODER PROTOCOL IS NEEDED
-//////////////////////////////////////////
-- (void)encodeWithCoder:(NSCoder *)coder
-{
-    [coder encodeObject:[NCCDDAO sharedCompanies] forKey:@"companiesKey"];
-}
-
-- (id)initWithCoder:(NSCoder *)coder
-{
-    self  = [super init];
-    
-    if (self)
-    {
-        NSMutableArray *companies = [NCCDDAO sharedCompanies];
-        companies = [coder decodeObjectForKey:@"companiesKey"];
-    }
-    
-    return self;
-}
-
-//+ (void)deleteProductNamed:(NSString *)name fromCompany:(OONCCompany *)company
-//{
-//    NSUInteger companyIndex = [[OONCDAO sharedCompanies] indexOfObjectIdenticalTo:company];
-//    NSUInteger productIndex = [company.products indexOfObjectIdenticalTo:name];
-//
-//    [[[OONCDAO sharedCompanies][companyIndex] products] removeObjectAtIndex:productIndex];
-//}
-
 @end

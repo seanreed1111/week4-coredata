@@ -8,24 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "OONCCompany.h"
+#import "Company.h"
 
-@interface NCCDDAO : NSObject //<NSCoding>
+@interface NCCDDAO : NSObject
 
 @property(strong, nonatomic) UIManagedDocument *document;
-+ (void)resetCompanies;
++ (void)initSharedDocument;
++ (void)documentIsReady:(UIManagedDocument *)document;
 + (NSMutableArray *)loadCompanies;
-+ (NSMutableArray *)sharedCompanies;
 
-
-+(void)deleteProductAtIndex:(NSUInteger)productIndex fromCompany:(OONCCompany *)company;
-
-//////////////////////////////////////////
-// DETERMINE IF NSCODER PROTOCOL IS NEEDED
-//////////////////////////////////////////
-
-//-(void)encodeWithCoder:(NSCoder *)coder;
-//-(id)initWithCoder:(NSCoder *)coder;
-
-//+ (void)deleteProductNamed:(NSString *)name fromCompany:(OONCCompany *)company;
 @end
