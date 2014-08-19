@@ -50,15 +50,7 @@
     // Override point for customization after application launch.
     NSLog(@"application didFinishLaunchingWithOptions:");
  
-    // create the UIManagedObject
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *documentsDirectory = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
-    NSString *documentName = @"MyDocument";
-    NSURL *url = [documentsDirectory URLByAppendingPathComponent:documentName];
-    UIManagedDocument *document = [[UIManagedDocument alloc]initWithFileURL:url];
-    
-    //opening or creating a UIManagedDocument
+
     
     return YES;
 }

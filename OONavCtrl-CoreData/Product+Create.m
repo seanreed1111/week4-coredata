@@ -9,7 +9,7 @@
 #import "Product+Create.h"
 
 @implementation Product (Create)
-+ (Product *)productWithName:(NSString *)name
++ (Product *)fetchProductWithName:(NSString *)name
       inManagedObjectContext:(NSManagedObjectContext *)context
 {
     Product *product = nil;

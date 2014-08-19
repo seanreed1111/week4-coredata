@@ -9,11 +9,13 @@
 #import "NCCDDAO.h"
 
 @implementation NCCDDAO
-+ (UIManagedDocument *)sharedDocument
+
+static UIManagedDocument *document = nil;
+static NSMutableArray *companies = nil;
+
++ (void)initSharedDocument
 {
-    static UIManagedDocument *document = nil;
     static dispatch_once_t dispatch_once_token;
-    
     dispatch_once(&dispatch_once_token, ^{
         // initialize UIManaged Document instance
         NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -22,31 +24,25 @@
         NSURL *url = [documentsDirectory URLByAppendingPathComponent:documentName];
         document = [[UIManagedDocument alloc]initWithFileURL:url];
 
+
         BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:[url path]];
         if (fileExists) {
             [document openWithCompletionHandler:^(BOOL success){
                 if (!success) {
                     NSLog(@"couldn't open document at %@", url);
                 } else {
-                    [NCCDDAO documentIsReady:document];
+                    [NCCDDAO documentIsReady:document]; // ready to load companies
                 }
             }];
         } else {
             [document saveToURL:url forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success){
                 if (!success) {
                     NSLog(@"couldn't create document at %@", url);
-                } else {
-                  // no need to try to fetch data because file didn't exist!!!!
-
                 }
             }];
         }
     });
-    
-    return document; // not threadsafe
-    
-    //since the openWithCompletionHandler: and saveToURL:forSaveOperation: methods do not happen on the
-    //main queue, there is no guarantee that I'll be able to return a document here.
+
 }
 
 + (void)documentIsReady:(UIManagedDocument *)document
@@ -70,57 +66,26 @@
                                                                   ascending:YES
                                                                    selector:@selector(localizedStandardCompare:)]];
         NSError *error;
-        NSArray *companies = [context executeFetchRequest:request error:&error]; //not threadsafe, but "USUALLY" very fast
-        
+        NSArray *companies = [context executeFetchRequest:request error:&error]; //not threadsafe
+        NSLog(@"Companies = %@",companies);
     }
     
 }
 
-+ (NSMutableArray *)sharedCompanyObjects
-{
-    static NSMutableArray *companies = nil;
-    
-    return companies;
-    
-}
+//+ (void)executeFetchRequest:(NSFetchRequest *)request forContext:(NSManagedObjectContext *)context error:(NSError *)error completionHandler:^()
+//{
+//    
+//}
 
-- (NSMutableArray)initCompanyObject
-{
-    
-}
 
 + (NSMutableArray *)sharedCompanies
 {
- //probably need to make a sharedDocument method
-    static NSMutableArray *companies = nil; // NSMutableArray of OONCCompany objects
+ //the first time this method is called
+      //it must run from a completion handler so that it has an "ready" UIManagedDocument
+//    then, companies are initially loaded once from the Core Data persistent store
     
-    static dispatch_once_t dispatch_once_token;
 
-// reimplement this method using Core Data
-    
-//    dispatch_once(&dispatch_once_token, ^{
-//        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//        NSData *data =[defaults objectForKey:@"companiesKey"];
-//        if (data)
-//        {
-//            companies = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-//        }
-//        else
-//        {
-//            companies =  [OONCDAO loadCompanies];
-//        }
-//        
-//    });
-    
-    dispatch_once(&dispatch_once_token, ^{
-    // initialize UIManaged Document instance
-        
-    // if they exist, add them to companies.
-        
-    // else companies  = [NCCDAO loadCompanies]
-    
-    
-    });
+ // NSMutableArray of OONCCompany objects
     
     
     return companies;
