@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14937EC319A25C4700CD986D /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 14937EC219A25C4700CD986D /* Company.m */; };
-		14937EC619A25C4800CD986D /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 14937EC519A25C4800CD986D /* Product.m */; };
+		14A1671F19A3B09000F45335 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A1671E19A3B09000F45335 /* Product.m */; };
+		14A1672219A3B09000F45335 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A1672119A3B09000F45335 /* Company.m */; };
 		14A86E86199E85B100479912 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A86E85199E85B100479912 /* Foundation.framework */; };
 		14A86E88199E85B100479912 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A86E87199E85B100479912 /* CoreGraphics.framework */; };
 		14A86E8A199E85B100479912 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A86E89199E85B100479912 /* UIKit.framework */; };
@@ -55,10 +55,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14937EC119A25C4700CD986D /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
-		14937EC219A25C4700CD986D /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
-		14937EC419A25C4800CD986D /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
-		14937EC519A25C4800CD986D /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		14A1671D19A3B09000F45335 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		14A1671E19A3B09000F45335 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		14A1672019A3B09000F45335 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
+		14A1672119A3B09000F45335 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
 		14A86E82199E85B100479912 /* OONavCtrl-CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OONavCtrl-CoreData.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A86E85199E85B100479912 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		14A86E87199E85B100479912 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -141,11 +141,11 @@
 			children = (
 				14A86EF6199EA61800479912 /* NCCDDAO.h */,
 				14A86EF7199EA61800479912 /* NCCDDAO.m */,
+				14A1671D19A3B09000F45335 /* Product.h */,
+				14A1672019A3B09000F45335 /* Company.h */,
+				14A1672119A3B09000F45335 /* Company.m */,
+				14A1671E19A3B09000F45335 /* Product.m */,
 				14A86EDE199E89C800479912 /* Model.xcdatamodeld */,
-				14937EC419A25C4800CD986D /* Product.h */,
-				14937EC519A25C4800CD986D /* Product.m */,
-				14937EC119A25C4700CD986D /* Company.h */,
-				14937EC219A25C4700CD986D /* Company.m */,
 				14A86EE7199E901500479912 /* Product+Create.h */,
 				14A86EEA199E902C00479912 /* Company+Create.h */,
 				14A86EE8199E901500479912 /* Product+Create.m */,
@@ -350,7 +350,7 @@
 			files = (
 				14A86ECA199E85DF00479912 /* OONCProduct.m in Sources */,
 				14A86EF5199E91B800479912 /* NCCDWebViewController.m in Sources */,
-				14937EC619A25C4800CD986D /* Product.m in Sources */,
+				14A1671F19A3B09000F45335 /* Product.m in Sources */,
 				14A86EF2199E918700479912 /* NCCDChildViewController.m in Sources */,
 				14A86ECB199E85DF00479912 /* OONCWebViewController.m in Sources */,
 				14A86E96199E85B100479912 /* NCCDAppDelegate.m in Sources */,
@@ -366,7 +366,7 @@
 				14A86EEC199E902C00479912 /* Company+Create.m in Sources */,
 				14A86EE0199E89C800479912 /* Model.xcdatamodeld in Sources */,
 				14A86E9C199E85B100479912 /* NCCDViewController.m in Sources */,
-				14937EC319A25C4700CD986D /* Company.m in Sources */,
+				14A1672219A3B09000F45335 /* Company.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

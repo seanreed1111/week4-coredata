@@ -10,6 +10,70 @@
 
 @implementation Company (Create)
 
++ (Company *)createCompanyWithDictionary:(NSDictionary *)dictionary
+                  inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    Company *company = nil;
+    return company;
+}
+
+//  THESE METHODS ARE FROM THE OLD OONCCompany Class
+//////////////////////////
+//////////////////////////
++ (Company *)createCompanyWithDictionary:(NSDictionary *)companyDictionary
+{
+    return [[Company alloc]initCompanyWithDictionary:companyDictionary];
+}
+
+- (Company *)initCompanyWithDictionary:(NSDictionary *)companyDictionary
+{
+    self = [super init];
+    if (self)
+    {
+        NSArray *keys = [companyDictionary allKeys];
+        
+        //copy objects passed from dictionary into named properties of current object
+        for (NSString *property in keys)
+        {
+            SEL setProperty = NSSelectorFromString([NSString stringWithFormat:@"set%@:",[property capitalizedString]]);
+            // selector object creates the default setter names for all properties, e.g. setName:, setProducturl:, etc.
+            //if property names already have a capital letter in them, this won't work.
+            //Would need to write a 'capitalize first word only' method to replace 'capitalizedString' method, since the latter change all characters besides the first to lower case.
+            
+            if([self respondsToSelector:setProperty])
+            {
+                [self performSelector:setProperty
+                           withObject:[companyDictionary objectForKey:property]];
+            }
+        }
+        
+    }
+    return self;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 + (Company *)companyWithDictionary:(NSDictionary *)companyDictionary
             inManagedObjectContext:(NSManagedObjectContext *)context
 {

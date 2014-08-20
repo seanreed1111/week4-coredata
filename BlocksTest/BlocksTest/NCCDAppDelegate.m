@@ -15,13 +15,51 @@
      NSLog(@"application didFinishLaunchingWithOptions:");
     // Override point for customization after application launch.
 
+    
+    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
+    NSOperationQueue *myQueue = [[NSOperationQueue alloc]init];
+    myQueue.name = @"My Queue";
+
+    
     void (^completion)() = ^(){
         NSLog(@"completed");
+        NSLog(@"currentOperationQueue is %@", [[NSOperationQueue currentQueue] name]);
     };
-    completion();
+    void (^runFirst)() = ^(){
+        NSLog(@"first");
+        NSLog(@"currentOperationQueue is %@", [[NSOperationQueue currentQueue] name]);
+    };
+    void (^runSecond)() = ^(){
+        NSLog(@"second");
+        NSLog(@"currentOperationQueue is %@", [[NSOperationQueue currentQueue] name]);
+    };
+    
+    NSBlockOperation *operation1 = [NSBlockOperation blockOperationWithBlock:runFirst];
+    NSBlockOperation *operation2 = [NSBlockOperation blockOperationWithBlock:runSecond];
+    NSBlockOperation *completionOperation = [NSBlockOperation blockOperationWithBlock:completion];
+
+    // For the NSInvocationQueueTest
+    NSInvocationOperation *invocationOperation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(invocationTest) object:nil];
+
+
+    [operation2 addDependency:operation1];
+    [completionOperation addDependency:operation2];
+    
+    [myQueue addOperation:operation2];
+    [myQueue addOperation:operation1];
+    [mainQueue addOperation:completionOperation];
+    [myQueue addOperation:invocationOperation];
+    
+
+    
     return YES;
 }
-							
+
+- (void)invocationTest
+{
+    NSLog(@"Invocation successful");
+    NSLog(@"currentOperationQueue is %@", [[NSOperationQueue currentQueue] name]);
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

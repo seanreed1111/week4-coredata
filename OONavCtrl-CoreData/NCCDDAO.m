@@ -11,7 +11,23 @@
 @implementation NCCDDAO
 
 static UIManagedDocument *document = nil;
-static NSMutableArray *companies = nil;
+static NSMutableArray *companies = nil; // of Company* objects
+
++ (NSMutableArray *)loadCompanies
+{
+    NSMutableArray *newCompanies = [[NSMutableArray alloc]initWithCapacity:5];
+    
+    NSDictionary *microsoftDictionary = @{@"companyname":@"Microsoft",@"companyurl":@"http://microsoft.com", @"companyimagename":@"microsoft-logo.png",@"ticker":@"MSFT", @"products":[NSMutableArray arrayWithArray:@[@"Microsoft Product #1", @"Microsoft Product #2", @"Microsoft Product #3"]]};
+    NSDictionary *appleDictionary = @{@"companyname":@"Apple",@"companyurl":@"http://apple.com", @"companyimagename":@"apple-logo.jpeg",@"ticker":@"AAPL",@"products":[NSMutableArray arrayWithArray:@[@"iPad", @"iPod Touch", @"iPhone"]]};
+    NSDictionary *nokiaDictionary = @{@"companyname":@"Nokia",@"companyurl":@"http://nokia.com/us-en/phones/", @"companyimagename":@"nokia-logo.jpg", @"ticker":@"NOK",@"products":[NSMutableArray arrayWithArray:@[@"Nokia Product #1", @"Nokia Product #2", @"Nokia Product #3"]]};
+    NSDictionary *samsungDictionary = @{@"companyname":@"Samsung",@"companyurl":@"http://samsung.com/us", @"companyimagename":@"samsung-logo.png",@"ticker":@"005930.KS",@"products":[NSMutableArray arrayWithArray:@[@"Samsung Product #1", @"Samsung Product #2", @"Samsung Product #3"]]};
+    NSDictionary *blackberryDictionary = @{@"companyname":@"Blackberry",@"companyurl":@"http://microsoft.com", @"companyimagename":@"Blackberry-logo.jpg",@"ticker":@"BBRY",@"products":[NSMutableArray arrayWithArray:@[@"Blackberry Product #1", @"Blackberry Product #2", @"Blackberry Product #3"]]};
+    
+    NSArray *keys  = [microsoftDictionary allKeys];
+    
+    
+    return companies;
+}
 
 + (void)initSharedDocument
 {
@@ -66,25 +82,9 @@ static NSMutableArray *companies = nil;
                                                                   ascending:YES
                                                                    selector:@selector(localizedStandardCompare:)]];
         NSError *error;
-        NSArray *companies = [context executeFetchRequest:request error:&error]; //not threadsafe
+        NSArray *companies = [context executeFetchRequest:request error:&error]; //not threadsafe??
         NSLog(@"Companies = %@",companies);
     }
     
-}
-
-
-+ (NSMutableArray *)loadCompanies
-{
-    NSMutableArray *companies = [[NSMutableArray alloc]initWithCapacity:5];
-    
-    NSDictionary *microsoftDictionary = @{@"companyname":@"Microsoft",@"companyurl":@"http://microsoft.com", @"companyimagename":@"microsoft-logo.png",@"ticker":@"MSFT", @"products":[NSMutableArray arrayWithArray:@[@"Microsoft Product #1", @"Microsoft Product #2", @"Microsoft Product #3"]]};
-    NSDictionary *appleDictionary = @{@"companyname":@"Apple",@"companyurl":@"http://apple.com", @"companyimagename":@"apple-logo.jpeg",@"ticker":@"AAPL",@"products":[NSMutableArray arrayWithArray:@[@"iPad", @"iPod Touch", @"iPhone"]]};
-    NSDictionary *nokiaDictionary = @{@"companyname":@"Nokia",@"companyurl":@"http://nokia.com/us-en/phones/", @"companyimagename":@"nokia-logo.jpg", @"ticker":@"NOK",@"products":[NSMutableArray arrayWithArray:@[@"Nokia Product #1", @"Nokia Product #2", @"Nokia Product #3"]]};
-    NSDictionary *samsungDictionary = @{@"companyname":@"Samsung",@"companyurl":@"http://samsung.com/us", @"companyimagename":@"samsung-logo.png",@"ticker":@"005930.KS",@"products":[NSMutableArray arrayWithArray:@[@"Samsung Product #1", @"Samsung Product #2", @"Samsung Product #3"]]};
-    NSDictionary *blackberryDictionary = @{@"companyname":@"Blackberry",@"companyurl":@"http://microsoft.com", @"companyimagename":@"Blackberry-logo.jpg",@"ticker":@"BBRY",@"products":[NSMutableArray arrayWithArray:@[@"Blackberry Product #1", @"Blackberry Product #2", @"Blackberry Product #3"]]};
-    
-    
-    
-    return companies;
 }
 @end
