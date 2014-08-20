@@ -51,13 +51,12 @@ static UIManagedDocument *document = nil;
         [companies addObject:[Company createCompanyWithDictionary:nokiaDictionary inManagedObjectContext:context]];
         [companies addObject:[Company createCompanyWithDictionary:samsungDictionary inManagedObjectContext:context]];
         [companies addObject:[Company createCompanyWithDictionary:blackberryDictionary inManagedObjectContext:context]];
-
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        NSURL *documentsDirectory = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
-        NSString *documentName = @"NCCDAO";
-        NSURL *url = [documentsDirectory URLByAppendingPathComponent:documentName];
-        
     };
+        fileManager = [NSFileManager defaultManager];
+        documentsDirectory = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
+        url = [documentsDirectory URLByAppendingPathComponent:documentName];
+        
+
     
     void (^saveCompanies)() = ^(){
         [document saveToURL:url
@@ -94,18 +93,16 @@ static UIManagedDocument *document = nil;
 
 + (void) openOrCreateUIManagedDocument
 {
+//    void (^documentReadyForReadWrite)() = ^(){
+//        NSLog(@"fileReadyForReadWrite");
+//        NSLog(@"currentOperationQueue is %@", [[NSOperationQueue currentQueue] name]);
+//    };
 
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *documentsDirectory = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
-    NSString *documentName = @"NCCDAO";
-    NSURL *url = [documentsDirectory URLByAppendingPathComponent:documentName];
+    fileManager = [NSFileManager defaultManager];
+    documentsDirectory = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
+    url = [documentsDirectory URLByAppendingPathComponent:documentName];
     document = [[UIManagedDocument alloc]initWithFileURL:url];
-    void (^documentReadyForReadWrite)() = ^(){
-        NSLog(@"fileReadyForReadWrite");
-        NSLog(@"currentOperationQueue is %@", [[NSOperationQueue currentQueue] name]);
-    };
-
-
+    
     BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:[url path]];
     if (fileExists)
     {
@@ -153,6 +150,11 @@ static UIManagedDocument *document = nil;
         NSArray *companies = [context executeFetchRequest:request error:&error];
         NSLog(@"Companies = %@",companies);
     }
+    
+}
+
++ (void)deleteProductAtIndex:(NSInteger)index fromCompany:(Company *)company
+{
     
 }
 @end

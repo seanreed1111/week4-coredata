@@ -17,7 +17,7 @@
 @property(strong, nonatomic) NSManagedObjectContext *context;
 + (NSMutableArray *)sharedCompanies;
 + (void)resetCompanies;
-+ (void) openOrCreateUIManagedDocument;
++ (void) penOrCreateUIManagedDocument;
 + (void)readyToImportFromDocument:(UIManagedDocument *)document;
-
++ (void)deleteProductAtIndex:(NSInteger)index fromCompany:(Company *)company;
 @end

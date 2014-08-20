@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NCCDDAO.h"
+
 
 @interface NCCDAppDelegate : UIResponder <UIApplicationDelegate>
 
