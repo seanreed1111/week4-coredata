@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "Company.h"
+#import "Company+Create.h"
 
 @interface NCCDDAO : NSObject
 
-@property(strong, nonatomic) UIManagedDocument *document;
-+ (void)initSharedDocument;
-+ (void)documentIsReady:(UIManagedDocument *)document;
-+ (NSMutableArray *)loadCompanies;
+@property(strong, nonatomic) UIManagedDocument *doc;
+@property(strong, nonatomic) NSManagedObjectContext *context;
++ (NSMutableArray *)sharedCompanies;
++ (void)resetCompanies;
++ (void) openOrCreateUIManagedDocument;
++ (void)readyToImportFromDocument:(UIManagedDocument *)document;
 
 @end

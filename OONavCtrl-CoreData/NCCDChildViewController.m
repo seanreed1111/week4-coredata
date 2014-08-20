@@ -82,8 +82,9 @@
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
         // delete the product at the appropriate index from DAO
-        [NCCDDAO deleteProductAtIndex:[indexPath row] fromCompany:self.company
-         ];
+        ////////////////////////////////////////////////////////////////////
+//        [NCCDDAO deleteProductAtIndex:[indexPath row] fromCompany:self.company];  FIX THIS DELETE PRODUCT METHOD
+
         // delete the row from the table
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
